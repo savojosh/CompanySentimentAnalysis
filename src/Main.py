@@ -1,9 +1,9 @@
 import os
 import asyncio
-from Scrape import Scrape
+from TwScrape import TwScrape
 from TwitterSentiment import TwitterSentiment
 
-s = Scrape()
+s = TwScrape()
 t = TwitterSentiment()
 query = "Google (new OR update OR stock OR product) min_replies:50 min_faves:1000"
 

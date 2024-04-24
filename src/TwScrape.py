@@ -5,7 +5,7 @@ ACCOUNTS = [
     #accounts here
 ]
 
-class Scrape:
+class TwScrape:
         
     def __init__(self):
         
@@ -17,15 +17,15 @@ class Scrape:
         
         for account in ACCOUNTS:
             
-            await self.api.pool.add_account(account[0], account[1], account[2], account[3])
+            await self.api.pool.add_account(*account)
     
         await self.api.pool.login_all()
     
     async def searchTweets(self, query: str):
         
         tweets = []
-        
-        async for tweet in self.api.search(query, limit=45):
+        print((300 * len(ACCOUNTS)) / (690 / 15))
+        async for tweet in self.api.search(query, limit=((300 * len(ACCOUNTS)) / (690 / 15))):
     
             tweets.append(tweet.rawContent)
             
